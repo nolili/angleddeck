@@ -1,0 +1,16 @@
+%h1= @project.name
+
+.alert.alert-danger
+  The URL is private, but this page is not.
+  %ul
+    %li Make sure bookmark or remember the URL. There is no pointer to this page at all.
+    %li Anyone who knows the URL can access this page.
+
+%h2 Topics
+
+= link_to "Add New Topic", new_project_topic_url(@project.guid), class: "btn btn-default"
+
+- @project.topics.each do |topic|
+  .topic
+    %h3= link_to topic_name(topic), project_topic_url(project_id: @project.guid, id: topic.id)
+    .updated-at Last updated at #{l topic.updated_at}

@@ -1,0 +1,14 @@
+%html
+  %head
+    %title Angled Deck
+    = csrf_meta_tags
+    = action_cable_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true
+    = javascript_include_tag 'application', 'data-turbolinks-track': true
+    %meta{ name: "viewport", content: "width=device-width"}
+  %body
+    - if content_for? :breadcrumb
+      %ol.breadcrumb
+        = yield :breadcrumb
+    .container-fluid
+      = yield

@@ -1,0 +1,25 @@
+- content_for :breadcrumb do
+  %li= link_to @project.name, project_url(@project.guid)
+  %li= link_to topic_name(@topic), project_topic_url(@project.guid, @topic.id)
+  %li.active Build
+
+%h1
+  Build on #{topic_name(@topic)}
+  %small on #{@project.name}
+
+%dl
+  %dt Created at
+  %dd= l(@build.created_at)
+  %dt Bundle Identifier
+  %dd= @build.bundle_identifier
+  %dt Bundle Version
+  %dd= @build.bundle_version
+  %dt URL
+  %dd= @build.url
+
+- if request_from_ios_device?
+  = link_to "Install", install_plist_url(@build), class: "btn btn-primary btn-lg"
+  .alert.alert.alert-warning
+    Failed to install??
+- else
+  %p.alert.alert-info Send this URL to your device to install.

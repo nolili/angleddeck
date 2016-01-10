@@ -1,0 +1,16 @@
+%h1
+  New Build
+  %small on #{topic_name(@topic)} / #{@project.name}
+
+= form_for @build, url: project_topic_builds_url(@project.guid, @topic.id) do |t|
+  .form-group
+    = t.label :bundle_identifier
+    = t.text_field :bundle_identifier, class: "form-control"
+  .form-group
+    = t.label :bundle_version
+    = t.text_field :bundle_version, class: "form-control"
+  .form-group
+    = t.label :url
+    = t.text_field :url, class: "form-control"
+  = t.submit class: "btn btn-default"
+

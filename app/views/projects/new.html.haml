@@ -1,0 +1,6 @@
+%h1 New Project
+= form_for :project, url: projects_url do |t|
+  .form-group
+    = t.label :name
+    = t.text_field :name
+  = t.submit class: "btn btn-default"
