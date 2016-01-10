@@ -1,6 +1,10 @@
 %h1 New Project
-= form_for :project, url: projects_url do |t|
+= form_for :project, url: projects_url do |f|
   .form-group
-    = t.label :name
-    = t.text_field :name
-  = t.submit class: "btn btn-default"
+    = f.label :name
+    = f.text_field :name, class: "form-control"
+  .form-group
+    = f.label :gh_access_token
+    = f.text_field :gh_access_token, class: "form-control"
+    %p.help-block The token will be used to comment on pull request from hook.
+  = f.submit class: "btn btn-default"

@@ -22,6 +22,12 @@
 en:
   hello: "Hello world"
 
+  activerecord:
+    attributes:
+      project:
+        gh_access_token: GitHub Access Token
+
+
   models:
     topic:
       default_name: master

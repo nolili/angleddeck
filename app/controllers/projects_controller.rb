@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def create(project)
-    @project = Project.new(project.permit(:name))
+    @project = Project.new(project.permit(:name, :gh_access_token))
     if @project.save
       redirect_to project_url(@project.guid)
     else

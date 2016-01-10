@@ -17,4 +17,8 @@ class Project < ApplicationRecord
       topics.create!(name: nil, url: nil)
     end
   end
+
+  def has_github_access?
+    gh_access_token.present?
+  end
 end

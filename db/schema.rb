@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160110155143) do
+ActiveRecord::Schema.define(version: 20160110201001) do
 
   create_table "builds", force: :cascade do |t|
     t.integer  "topic_id",          null: false
@@ -24,10 +24,11 @@ ActiveRecord::Schema.define(version: 20160110155143) do
   end
 
   create_table "projects", id: false, force: :cascade do |t|
-    t.string   "guid",       null: false
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "guid",            null: false
+    t.string   "name",            null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "gh_access_token"
     t.index ["guid"], name: "index_projects_on_guid", unique: true
   end
 
