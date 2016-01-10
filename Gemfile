@@ -25,6 +25,7 @@ gem 'action_args'
 gem 'strong_json'
 gem 'haml-rails'
 gem 'bootstrap-sass'
+gem 'octokit'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -43,6 +44,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'thin'
+  gem 'rr'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

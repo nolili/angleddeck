@@ -11,5 +11,7 @@ Rails.application.routes.draw do
         get 'plist' => "builds#plist"
       end
     end
+
+    post 'hooks/github' => 'projects/hooks#github'
   end
 end
