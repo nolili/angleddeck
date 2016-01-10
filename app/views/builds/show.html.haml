@@ -9,7 +9,7 @@
 
 %dl
   %dt Created at
-  %dd= l(@build.created_at)
+  %dd= local_time @build.created_at
   %dt Bundle Identifier
   %dd= @build.bundle_identifier
   %dt Bundle Version

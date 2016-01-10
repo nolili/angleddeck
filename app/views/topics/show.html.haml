@@ -18,6 +18,6 @@
 - @topic.builds.order(created_at: :desc).each do |build|
   .topic
     %h3= link_to build.name, project_topic_build_url(@project.guid, @topic.id, build.id)
-    %div Published at #{l build.created_at}
+    %div Published #{local_time_ago build.created_at}
     - if request_from_ios_device?
       = link_to "Install", install_plist_url(build), class: "btn btn-primary"
