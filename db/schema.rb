@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20160110155143) do
 
   create_table "builds", force: :cascade do |t|
     t.integer  "topic_id",          null: false
+    t.string   "name",              null: false
     t.string   "bundle_identifier", null: false
     t.string   "bundle_version",    null: false
     t.string   "url",               null: false

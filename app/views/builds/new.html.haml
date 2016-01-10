@@ -4,6 +4,9 @@
 
 = form_for @build, url: project_topic_builds_url(@project.guid, @topic.id) do |t|
   .form-group
+    = t.label :name
+    = t.text_field :name, class: "form-control"
+  .form-group
     = t.label :bundle_identifier
     = t.text_field :bundle_identifier, class: "form-control"
   .form-group
