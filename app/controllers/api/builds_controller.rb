@@ -23,8 +23,8 @@ class Api::BuildsController < ApplicationController
       topic = project.topics.where(name: nil, url: nil).first
     end
 
-    topic.builds.create!(build_attributes)
+    build = topic.builds.create!(build_attributes)
 
-    render status: :ok, json: []
+    render status: :ok, json: { build_url: project_topic_build_url(project.guid, topic.id, build.id) }
   end
 end
