@@ -14,4 +14,10 @@ Rails.application.routes.draw do
 
     post 'hooks/github' => 'projects/hooks#github'
   end
+
+  namespace :api do
+    resources :projects, only: [] do
+      resources :builds, only: :create
+    end
+  end
 end
