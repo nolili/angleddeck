@@ -15,7 +15,7 @@ class GithubHook
   end
 
   def repository_name
-    body[:pull_request][:repository][:full_name]
+    body[:repository][:full_name]
   end
 
   def number
