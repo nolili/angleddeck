@@ -1,4 +1,6 @@
 class Projects::HooksController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def github(project_id)
     project = Project.find(project_id)
 
